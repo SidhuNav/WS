@@ -1,0 +1,12 @@
+XML - Extensible Markup Language
+	- hold data
+DTD - Document Type Definition
+	- DEFINES THE STRUCTURE OF THE FILE
+Namespaces
+
+maximum 
+	- Elements/Tags
+	- atributes
+	- attribute values
+	- text
+

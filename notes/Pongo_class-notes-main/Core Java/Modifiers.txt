@@ -1,0 +1,56 @@
+final 
+	- variable
+		- the variable's value cannot be changes
+		- final double PI = 3.14;
+	
+ 	- method
+		- stops method overriding, we cannot override a final method
+	- class
+		- stops inheritence, 
+
+static
+	- variable
+		- only one memory for the static variable is created for any number of objects created	
+		- can be accessed with class name
+	- method
+		- methods which perform common operations accross objects
+	- class
+		- only inner classes can be declared static
+	- block
+		- purpose is to initialize static variables
+		- can have any number of static blocks inside a class
+			static{
+
+			}
+
+
+Room r1;
+	- Room class is loaded from secondary to primary by the class loader
+	- Allocates memory for static variables
+	- static blocks are automatically called in the order that they are coded
+r1 = new Room();
+	- Allocate memory for non static variables
+	- calls the constructor
+
+class Room{
+
+	int length;
+	int width;
+	static int height;
+}
+
+
+in main()
+
+	System.out.println(Room.height);
+	Room r1 = new Room();
+	Room r2 = new Room();
+	Room r3 = new Room();
+
+
+
+other modifiers
+	synchronized
+	transient
+	native
+	abstract

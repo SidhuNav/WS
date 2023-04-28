@@ -1,0 +1,36 @@
+JDK - Java Development Kit
+
+.jar - Java Archive 
+.war - web archive
+.ear - enterprise archive ( jar + war)
+
+Ecleipse IDE - Intergrated Developemnt Environment
+
+platform independent
+object oriented programming
+
+
+steps
+-----
+type the code
+save the file
+compile and debug - javac
+	- the source code is converted to byte code upon successful compilation
+	
+
+execute to see the output - java
+
+	- a JRE(Java Runtime Environment) opens up
+	- JRE has other components/programs like JVM, Garbage collectors, class loader, byte code verifier, default handler etc which helps to run your program
+	- the byte code is coverted to machine code and then executed
+	- JVM ( Java Virtual Machine) runs the code
+
+	- 
+
+is byte code and machine code the same? - no
+
+JDK = java compiler + JRE
+
+input 
+process
+output

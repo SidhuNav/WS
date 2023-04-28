@@ -1,0 +1,36 @@
+
+1) Thread instance - taken care by executor framework
+2) task for the thread
+3) start the thread - taken care by the executor framework
+
+API for executor framework
+
+	Executor
+	ExecutorService
+	Executors
+	Future
+
+//ExecutorService service = Executors.newFixedThreadPool(3);
+//ExecutorService service = Executors.newCachedThreadPool();
+//ExecutorService service = Executors.newScheduledThreadPool(5);
+ExecutorService service = Executors.newSingleThreadExecutor();
+
+
+interview questions
+look out- lifecycle of a thread
+can i call the start method twice on a thread?
+can i create a thread by calling the run method instead of start? how would it work?
+whats the priority of a child thread?
+methods of Thread 
+priority of threads
+
+Thread synchronization
+	2 ways
+		- use the synchronized keyword
+		- use a synchronized block
+
+interthread communication - wait, notify and notifyAll
+	- very suitable to solve the producer consumer problem
+
+
+

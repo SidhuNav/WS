@@ -1,0 +1,16 @@
+
+public class Room {
+
+	//variables
+	int length;
+	int width;
+	int height;
+	String color;
+	int roomNo;
+	
+	int CalculateFlooeArea()
+	{
+		int floorArea= length*width;
+		return  floorArea;
+	}
+}

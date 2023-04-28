@@ -1,0 +1,54 @@
+Operators
+----------
+1) Arithmetic operators
+	+ - * / %
+2) Assignment operator
+	=
+3) Arithmetic Assignment operator
+	+= -= *= /= %=
+	int a = 10;
+	a = a + 5; or a += 5;
+4) Logical operators
+	&&(AND) ||(OR) !(NOT)
+5) Relational operators
+	> >= < <= == !=
+6) shift operators
+	<< >> >>>
+7) bitwise operators
+	& | ^
+8) inc/ dec operators
+	++ --
+
+Flow Control statements
+-----------------------
+1) if
+	- simple if
+	- if...else
+	- else if ladder
+	- nested if
+
+2) switch case
+	
+
+Looping statements - initial value, condn , expr which always works towards making the condn false
+-------------------
+1) while loops
+2) do while loops
+3) for loops
+4) enhanced for loops
+
+int marks[] = new int[10];
+
+for(int i=0; i<marks.length; i++){
+	System.out.println(marks[i]);
+}
+
+for(int data : marks){
+	System.out.println(data);	
+}
+
+String[] allNames = new String[10];
+
+
+
+

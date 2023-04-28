@@ -1,0 +1,77 @@
+OOPS Concept
+------------
+
+Inheritence
+	- one class extends another class
+	- the class that is extended from is called super class / base class/ parent class
+	- the other class is called sub class / derived class / child class
+	- we acheived code reusability
+	- we get is - a relation between the classes
+	- types of inheritence
+	- doesnt support multiple inheritence - class C extends A, B
+
+please explore has-a relation between two classes and how is it acheived?
+
+
+Polymorphism
+ - method overriding
+	- inheritence is a pre-requisite
+	- redefining a functionality of the super class in the sub class
+	- same method signature and return type in super and sub class
+	- over ride carefully other wise you up overloading
+	- runtime polymorphism
+
+ - method overloading
+	- same method name with different arguments
+	- different arguments means order, type or number of arguments
+	- we do not consider the return type here
+	- inheritence is not a pre-requisite
+	- compile time polymorphism
+
+Encapsulation
+	- hiding of data
+	- wrapping up the data members and the functions into a single unit
+	- data members of the class should be private
+	- and provide public getters/setters
+
+
+
+
+access specifiers -  applied to members of the class
+-----------------
+
+			within the class	within the package	outside package+inherited class		outside the package
+public			yes			yes			yes					yes
+
+protected		yes			yes			yes					no
+
+default/no modifier	yes			yes			no					no
+
+private			yes			no			no					no
+
+
+class - public or default
+
+
+Abstraction
+	- higligting the essential information
+	- abstract classes and interfaces
+	abstract class
+	- abstract methods do not have body definition
+	- class becomes abstract if it has atleast one abstract methods
+	- cannot create objects for abstarct classes
+	- abstract classes are meant to be inherited
+	- the child which inhereits abstract class should provide the definition for the abstract method, thereby the child class becomes the concrete/complete class
+	interfaces
+	- prior to java 8 , interfaces were pure abstract classes 
+	- after java8 interfaces can contain abstract methods, default methods, static methods
+	- interfaces can have variables declared in them, and they are by default public static final variables
+	- any method in an interface is by default public
+	- marker interfaces are empty interfaces
+class ---implements--> interface, interface, interface
+interface ----extends----> interface, interface, interface
+class -----extends-----> class
+interface ----------> class no relation
+
+
+Euqals and hash code method ?

@@ -1,0 +1,50 @@
+Code coverage
+-------------
+	-JaCoCo - Java Code Coverage
+	-Sonar Lint
+	
+Code quality
+------------
+
+CPD - Copy Paste Detector
+PMD - Program mistake detector
+    - provide rules to the tool
+Sonar Cube
+
+Logging
+-------
+
+	- we log information into a log file as out code is being executed
+	- log4j2 framework, logback by spring, java.util.logging package of core java
+
+steps to add log4j2
+--------------------
+1) add 2 dependencies in the pom.xml - log4j-api and log4j-core
+2) add the configuration file log4j2.xml in src/main/resources for a maven project
+3) start using the api's of log4j in the source code
+4) provide logging in service and dao layer for each method - LOG.info("normal message");
+5) provide logging in cath block in presentation layer - LOG.error("error message");
+
+ConsoleAppenders
+FileAppenders
+RollingFileAppenders -  frequently used over FileAppenders
+JdbcAppenders
+
+
+
+
+configuration files 
+
+	file based configuration
+		- .xml, .properties
+	annotation based configuration
+		- we use annotation in the source code
+	java based configuration
+		- use java class as a configuration file
+
+
+J2SE - Java 2 Standard Edition
+J2EE - Java 2 Enterprise Edition
+J2ME - Java 2 Micro Edition
+
+

@@ -1,0 +1,42 @@
+subquery
+	- when a query works on an unknow value/ computed value, we use subquery to compute that value
+	- inner query(sub query) and outter query
+	- here first the inner query executes and returns a value/list of values and then the outer query works on that value.
+
+corelated subquery
+	- for every record of the outer query , the inner query works
+
+
+views
+------
+
+
+CREATE VIEW comedies AS
+    SELECT *
+    FROM films
+    WHERE kind = 'Comedy';
+
+
+SELECT * FROM comedies;
+
+Index
+------
+
+	- generally column which are very frequently used in the where clause
+	- can create indexes on more than one column( maybe the where clause frequently works with those 2 column together)
+
+1-100 ----> 1234
+100-200 -----> 4567
+
+A 
+
+Abstraction ---- Pg 230
+
+Abstract classes ---- Pg 500
+B
+
+
+
+
+
+

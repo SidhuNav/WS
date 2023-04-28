@@ -1,0 +1,16 @@
+p0 checklist
+------------
+1) project should be up and running
+2) project should be able to connect to the database
+3) functionalies completed as per the requirement
+4) proper architecture and layers
+5) naming/coding conventions to be strictly followed, code being formatted and cleaned(remove commented lines)
+6) Exception handling flow to be taken care off.
+7) JUnit for testing the service layer, atleast 1 test method for each service method with a 100% pass
+8) Mockito for mocking the DAO layer when we test service layer
+9) usage of Git, push the project to github with a good history of commits
+10) include a dbscript.sql file in the project
+11) include a schema diagram 
+12) if possible include documentation comments (optional)
+
+13) only 5 minutes, use it effectively

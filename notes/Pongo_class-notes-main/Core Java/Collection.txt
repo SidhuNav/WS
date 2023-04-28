@@ -1,0 +1,72 @@
+in-memory databases
+	- these db they do not store data in the secondary, it is available in primary		`
+	- h2 database
+
+1. add the h2 depenceny in pom.xml
+2. change the connection url in DBUtil
+3. change the username and password, default is sa and no password
+4. change the driver to be loaded, org.h2.Driver
+5. access the h2-console to create the DB and necessary tables
+
+arrays vs Collection - interview question
+
+Collection in Java - hold objects
+		   - any primitives added to a collection is converted to its equivalent wrapper type and vice versa
+		   - this is possible bacuse of auto-concept in java
+
+int[] marks = new int[5]; ----> array, fixed size , indexed
+
+List al = new ArrayList(); -----> Collection, not fixed size, not all collections are indexed
+al.add(10);
+al.add(50);
+al.add(5);
+
+
+
+
+
+
+List al = new ArrayList();
+al.add(10);
+al.add(50);
+al.add(5);
+
+System.out.println(al.get(2)); ----> 5
+
+
+
+List
+	- is indexed
+	- retains the order in which the objects were added
+	- allows multiple null values
+	- allows duplicate values
+
+Set
+	- is not indexed, no get() method
+	- does not retain the order, random order
+	- does not allow duplicate values to be added
+	- allows one null value
+	- everytime when an object is added it calls equals() to check for duplicates
+
+SortedSet
+	- follows all rules imposed by Set because it is an extension of Set + extra
+	- it sorts the objects added to it by calling the compareTo method of the object that was added
+	- which means any object added to a SortedSet implementation should implement Comparable interface
+
+Queue
+	- follows queue algorithm, Last In Last out(LILO) or First In First Out(FIFO)
+	- any object added is added to the rear
+	- any object removed is removed from the head
+	- not indexed
+	- allows duplicate values
+
+
+Map
+	- works with keys and values
+	- no duplicate keys
+	- can have duplicate values
+
+SortedMap
+	- follows all rules imposed by Map because it is an Extension of Map + extra
+	- it sorts the entries of the map in the order of the key
+	- which means any object added as a key to the TreeSet implementation should implement Comparable interface

@@ -1,0 +1,60 @@
+java reflection
+java annotations
+code coverage
+logging
+
+Reflection api
+
+Annotations
+-------------
+	- are used to convey information to external tools like compiler, jre, framework
+
+	- inbuilt annotation provided by core java library or any framework
+		annotations provided by core java library
+		 - @Override, @FuntionalInterface, @Deprecated, @SuppressWarnings
+		 - meta-annotation : used above other annotations
+		 - @Target, @Retention, @Documented, @Inherited
+		
+	- custom annotation
+
+
+Assignments
+------------
+1) stimulate the javap command
+	- introspect a class and this class name should be given as input by the user
+		- introspection is done in 2 steps
+			- get hold of the class object representation of the class name provided as input
+			- call the various different methods of the class object to print an output similar to javap's output
+	- sample input - reflectiondemo.Room (or) java.lang.Integer 
+		       - either through Scanner or as a commandline argument
+ 	- ouput - similar to what you get when you run the javap command
+
+2) stimulate a testing framework's annotations
+
+@Test - @MyTest
+@Before
+@After
+
+
+@Test
+public void addTestPositive(){
+}
+
+	- create a custom annotation @MyTest (1)
+	- create a test class similar to how we do in JUnit (2) 
+	- Annotate the test methods with the custom annotation @MyTest
+	- create another class with main, use reflection api on the test class and invoke the methods annotated with @MyTest
+
+3) custom logging framework - may not be reflection
+			    - understand how log4j works
+
+
+
+
+first step 
+	- obtain a Class object of what you are trying to introspect
+
+	- 3 main ways
+fields
+constructors
+methods

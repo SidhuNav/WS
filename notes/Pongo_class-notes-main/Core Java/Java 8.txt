@@ -1,0 +1,47 @@
+Functional interfaces - SAM (Single Abstract Method)
+----------------------
+	- interfaces with a single abstarct method
+	
+
+
+Object oriented programming  - pass objects as parameter
+Functional programming - pass function
+
+
+main 4 functional interfaces
+	- Consumer
+	- Function
+	- Supplier
+	- Predicate
+
+
+
+1) square of a number - Function
+2) generate a random number
+3) compute base and power, 3 and 2, 3 power 2, return 9
+4) if one number is greater than the other
+5) print a string in upper case
+
+
+Java 8 features
+----------------
+1. functional interfaces
+2. forEach()
+3. Optional class
+4. default and static methods in an interface
+5. method references - ::
+6. Stream api
+7. Java Date Time api, LocalDate, LocalTime, LocalDateTime
+8. improvements in the collection API
+
+
+Intermediate Operations :
+
+map(), filter(), distinct(), sorted(), limit(), skip()
+
+Terminal Operations :
+
+forEach(), toArray(), reduce(), collect(), min(), max(), count(), anyMatch(), allMatch(), noneMatch(), findFirst(), findAny()
+
+
+

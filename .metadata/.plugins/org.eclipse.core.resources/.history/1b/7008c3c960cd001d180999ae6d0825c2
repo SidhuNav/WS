@@ -1,0 +1,15 @@
+
+public class FordFigo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		boolean unlockCar()
+		{
+			System.out.println("FordFigo is ");
+			//System.out.println("My First Java Program through Eclipse");
+			return true;
+		}
+	}
+
+}

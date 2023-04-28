@@ -1,0 +1,846 @@
+polymorphism,Overloading, contructor, this Keyword, Static VAribales and methods,
+Java Inheritance, Method Overriding, super Keyword, Final Keyword, Java Interfaces,
+Java Packages, Access Modifier's, Exceptional Handeling,ArrayList, HashMap, JDBC
+
+
+
+
+
+day 6
+-----------
+Overloading
+this keyword
+static variables and methods
+______________________
+polymorphism is a concept which is achieved by overloading
+_________________________________
+Overloading:-- Creating methods/constructors with the same name with different parameters.
+
+2 types
+1) Method Overloading - we also can overload main method
+2) Constructor Overloading
+
+
+
+public class SDET_6_2 {
+	
+	public void main(int x)
+	{
+		System.out.println(x);
+	}
+	public void main(int x, int y)
+	{
+		System.out.println(x+y);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SDET_6_2 obj=new SDET_6_2();
+		obj.main(6);
+		SDET_6_2 obj2=new SDET_6_2();
+		obj2.main(40,60);
+	}
+
+}
+
+
+
+
+
+
+public class SDET_6 {
+	//Methid Overloading
+	void add(int a,int b)
+	{
+		System.out.println(a+b);
+	}
+	void add(int a,double b)
+	{
+		System.out.println(a+b);
+	}
+	void add(double a,double b)
+	{
+		System.out.println(a+b);
+	}
+	void add(int a,int b, int c)
+	{
+		System.out.println(a+b+c);
+	}
+
+	public static void main(String[] args) {
+		SDET_6 obj=new SDET_6();
+		obj.add(10,20);
+		obj.add(10,20.3);
+		obj.add(10.2,12.1);
+		obj.add(10,20.3);
+	}
+
+}
+
+________________________________________________________
+------------Constructor Overloading---------------------
+________________________________________________________
+public class SDET_6_1 {
+	SDET_6_1(int a, int b)
+	{
+		System.out.println(a+b);
+	}
+	SDET_6_1(int a, double b)  
+	{
+		System.out.println(a+b);
+	}
+	SDET_6_1(double a, double b)
+	{
+		System.out.println(a+b);
+	}
+	SDET_6_1(int a, int b, int c)
+	{
+		System.out.println(a+b+c);
+	}
+
+	public static void main(String[] args) {
+		SDET_6_1 obj1=new SDET_6_1(10,11);
+		SDET_6_1 obj2=new SDET_6_1(10,11.12);
+		SDET_6_1 obj3=new SDET_6_1(13.54,14.23);
+		SDET_6_1 obj4=new SDET_6_1(10,20,30);
+		
+	}
+
+}
+
+
+advantages:--
+		saves time
+		save memory
+
+1) Number of parameters
+2) Data type of paramerters
+
+
+
+Constructor Overloading
+
+This Keyword
+
+static --> applicable for variable and methods.
+
+Static variables
+static methods
+_____________________-
+1) static methods can access only static stuff directly without creating any object
+2) static methods can also access non static stuff but through object.
+3) Non Static methods can access both static and non static  direct access.
+
+
+
+
+
+public class StaticExample {
+	
+	static int a=10;	//static variable
+	int b=15;			//Non- Static Variable
+	static void m1()	//static
+	{
+		System.out.println("this is M1- static method");
+	}
+	void m2()			//Non- Static
+	{
+		System.out.println("this is M2- static method");
+	}
+	// Non Static methods can access both static and non static  direct access
+	void m3()
+	{
+		System.out.println("this is M3 Method");
+		System.out.println(a);
+		System.out.println(b);
+		m1();
+		m2();
+	}
+	
+
+	public static void main(String[] args) {
+		//static methods can access only static stuff directly without creating any object
+		m1();
+		System.out.println(a);
+		
+		//System.out.println(b);		incorrect because b is non-static varibale
+		//m2();							incorrect because m2() is non-static method
+		
+		//static methods can also access non static stuff but through object.
+		StaticExample obj=new StaticExample();
+		obj.m2();						//Non-Staic method through object
+		System.out.println(obj.b);		//Non-Variable method through object
+		
+		obj.m3();
+	}
+
+}
+
+_________________________________________________________________________________________________________________________________
+system.out.println()
+---------------------
+class Test()
+{
+	static String s="Welcome";
+}
+Test.s.length();           //using length function to access length of string using predefined method.
+
+-------------------------------------------
+class System
+{
+	static PrintStream out; inside this predefined class there is a static variable called as OUT
+}
+System.out.println();
+
+System is class
+	out is a variable of PrintStream
+	    println is a method belongs to PrintStream
+
+_____________________________________________
+--------------HOMEWORK ASSIGNMENT------------
+_____________________________________________
+
+
+
+public class Calculation {
+	
+	int sum(int x, int y)
+	{
+		return(x+y);
+	}
+	int sum(int x, int y, int z)
+	{
+		return(x+y+z);
+	}
+	double sum(double x, double y)
+	{
+		return(x+y);
+	}
+	double sum(double x, double y, double z)
+	{
+		return(x+y+z);
+	}
+	public static void main(String[] args) {
+		
+		Calculation cal= new  Calculation();
+		System.out.println(cal.sum(1, 2));
+		System.out.println(cal.sum(10,20, 30));
+		System.out.println(cal.sum(10.3, 20.4));
+		System.out.println(cal.sum(10.2,20.3, 40.5));
+
+	}
+
+}
+___________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________
+--------------------------------------------------------------DAY 7-------------------------------------------------
+____________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________
+
+Java Inheritance
+Method Overriding
+super Keyword
+Final Keyword
+____________________________________________________________________________________________________________________
+Inheritance: --> aquiring all the properties & behaviour from one class to aonther class is called Inheritance.
+Using extends keyword single Multilevel & hierarchical is possible
+
+Parent/Base/Super Class ---->child/sub/Derived class
+
+5 types of inheritance
+-------------------------------------------------------------------------------------------------------------------
+1) single		A to B
+2) Multilevel		A to B to C
+3) Hierarchical		A to B, C, & D where B, C & D are independent
+4) Multiple		A & B to C one child has 2 or more parents
+5) Hybrid		A to B & C then B and C to D it is a combination of Multiple and hierarchical
+
+
+Method Overriding
+------------------------------------------------------------------------------------------------------------------- 
+Rewrite the methods in child classes/
+	1) Methods define should be same
+	2) body should be changed.
+
+Super Keyword
+-------------------------------------------------------------------------------------------------------------------
+1) Super can be used to refer immidiate parent class instance variable.
+2) Super can be used to invoke immidiate parent class Method.
+3) Super() can be used to invoke immidiate parent class constructor.
+
+Final Keyword
+------------------------------------------------------------------------------------------------------------------
+1) Variable ---> you can not the value of that variable
+2) Method
+3) Class
+
+
+class A											//Parent Class
+{
+	int a;
+	void show()
+	{
+		System.out.println(a);
+	}
+}
+class B extends A								//B is a child class, of A is a parent class 
+{
+	int b;
+	void display()
+	{
+		System.out.println(b);
+	}
+}
+class C extends B
+{
+	int c;
+	void print()
+	{
+		System.out.println(c);
+	}
+}
+
+
+public class InheritanceExample {
+	
+
+	public static void main(String[] args) {
+		
+/*		A aobj=new A();				//accessing class using objects
+		aobj.a=25;
+		aobj.show();
+*/
+		
+		
+/*		B bobj= new B();			//SINGLE LEVEL INHERITANCE
+		bobj.b=30;					//B
+		bobj.display();				//B
+		bobj.a=14;					//A
+		bobj.show();				//A
+*/
+				
+		C cobj = new C();			//MULI LEVEL INHERITANCE
+		cobj.a= 10;
+		cobj.b=20;
+		cobj.c=30;
+		
+		cobj.show();
+		cobj.display();
+		cobj.print();
+		
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+class Parent
+{
+	int a;
+	void show()
+	{
+		System.out.println(a);
+	}
+}
+class Child1 extends Parent
+{
+	int x;
+	void display()
+	{
+		System.out.println(x);
+	}
+}
+class Child2 extends Parent
+{
+	int y;
+	void print()
+	{
+		System.out.println(y);
+	}
+}
+
+public class HierarchicalInheritance {
+
+	public static void main(String[] args) {
+
+		Child1 c1=new Child1();
+		c1.a=100;
+		c1.x=200;
+		c1.display();
+		c1.show();
+		
+		Child2 c2= new Child2();
+		c2.a=20;
+		c2.y=30;
+		c2.show();
+		c2.print();
+		
+		
+
+	}
+
+}
+
+
+_______________________________________________________________________________________________________________________
+*****************************************------------DAY 8 --------------------***************************************
+_______________________________________________________________________________________________________________________
+
+Java Interfaces
+Java Packages
+Access Modifier's
+_______________________________________________________________________________________________________________________
+
+Java Interfaces
+-------------------
+1) An interface is a blueprint of class
+2) inteface contains final and static variables by default.
+3) inteface contains abstract methods(we only having definition part of method without body for example void method1(int a, int b);)
+4)Methods in interface are Public by default
+5) interface supports the functionality of multiple inheritance
+6) we can define interface with interface keyword.
+7) A class extends another class, an interface extends another interface but a class implements are interface.
+8) we can create Object reference for interface but we cannot instantiate interface but we can intiate via class name.
+
+
+class to class using extends keyword
+interface to interface using extends keyword
+interface to class using implements keyword
+Class to interface not possible
+
+
+package day_8;
+
+interface A
+{
+	int a=15;		// by default variables in interface are static and final
+	
+	void m1();		//abstract method; by default public
+	
+}
+
+public class Test implements A
+{
+	
+	public void m1()
+	{
+		System.out.println(a);
+	}
+	public static void main(String[] args) {
+		Test obj=new Test();
+		obj.m1();
+//	A obj=new Test();
+//	obj.m1();
+	}
+
+}
+
+package day_8;
+
+interface ABC
+{
+	int x=100;
+	void m1();
+}
+interface XYZ
+{
+	int y=200;
+	void m2();
+	
+}
+
+
+public class MultipleInheritanceTest implements ABC,XYZ
+{
+	public void m1()
+	{
+		System.out.println(x);
+	}
+	public void m2()
+	{
+		System.out.println(y);
+	}
+	
+
+	public static void main(String[] args) {		
+//		MultipleInheritanceTest obj=new MultipleInheritanceTest();
+//		obj.m1();
+//		obj.m2();
+		
+	}
+
+}
+
+
+
+package day_8;
+
+class A1
+{
+	void m1()
+	{
+		System.out.println("This is m1 method from A1 class");
+	}
+}
+
+interface B1
+{
+	void m2();
+}
+interface B2
+{
+	void m3();
+}
+
+
+public class HybridInheritance extends A1 implements B1,B2
+{
+	public void m2()
+	{
+		System.out.println("THis is m2 Method from B1 interface");
+	}
+	public void m3()
+	{
+		System.out.println("THis is m3 Method from B2 interface");
+	}
+
+	public static void main(String[] args) {
+		HybridInheritance mi = new HybridInheritance();
+		mi.m1();
+		mi.m2();
+		mi.m3(); 
+		
+	}
+
+}
+
+PAckages (Just kind of Folder like in windows)
+--------------------------
+Package is collection of classes or intefaces or images or files any kind of files .
+Package is a kind of folder which contains similar type of classes belongs to samilar functions
+
+Pack 1		Pack 2
+-------		--------
+Class A		Class B
+		if I want to use class A which is present in pack 1;
+		then we have to use import function with class name + .(with dot operator) + class name
+		import Pack1.A;
+SUB-Package
+---------------
+Pack1.Pack2 pack2 is a sub package of pack 1
+
+2 types of packages in java
+------------------------
+1) user defined packages
+2) Built-in/Predefined Packages
+
+Import
+--------
+Import word at the begening of your program
+
+
+Access Modiefier's   ---> Defines the scope of variables and methods
+--------------------
+1) Public			
+2) Default			by default; the default modifier is accessible only within the pakage.
+3) Protected			acessible within package directly and outside pakage but through inheritance only
+4) Private			only within the class
+
+_______________________________________________________________________________________________________________________________________________________________________
+Exception
+-------------
+Exception Handling
+-------------------------
+Exception is an abnormal condition.
+In Java, exception is an event that disturbs the normal flow of the program.
+
+types of Exceptions
+--------------------------
+1) Checked	---> Exceptions which are checked/Identified by compiler
+a) try & catch block	-->
+				java try block is used to enclose the code that might throw an exception
+				it must be applied at stement level within the method
+				java try block must be follwed by either catch or finally block.
+				used for both Un-checked and checked exceptions
+				java catch block is used to handle the exception. it must be used after the try block only.
+				You can use multiple catch block with a single try.
+b) throws	-->	it should be applied at method level
+			used for only checked Exceptions
+
+
+Examples:-
+InterruptedException
+IOException
+FileNotFoundException etc.
+
+2) Un-checked	--->Exceptions which are not checked/Identified by compiler
+
+Examples:-
+ArithmaticException
+NullPointerException
+NumberFormatException
+ArrayIndexOutOfBoundsExceptions
+
+string a="navjot"
+int x=Integer.parseInt(a);		//Exception error
+
+
+Exception Handlings
+----------------------------
+syntax1:
+-----------
+try
+{
+	------
+	------
+}
+catch(exception type)
+{
+	------
+	------
+}
+
+syntax2:
+--------------
+try
+{
+statements;
+}
+catch(Exception1)
+{
+statements;
+}
+catch(Exception2)
+{
+statements;
+}
+
+sytax3:
+---------------
+try
+{
+statements;
+}
+catch(Exception type)
+{
+statements;
+}
+finally
+{
+statements;
+}
+
+one try block can have multiple catch blocks
+
+finally block is always executes..........
+1) Exception doesnot occur.
+2) Exception occur an not handled.
+3) Exception occur and handled
+
+
+
+
+package accessModifiers;
+
+public class ExceptionalHandlingExample {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		int a=20;
+		
+		System.out.println("I am in main method");
+		System.out.println("Process is started");
+		Thread. sleep(5000);
+		try
+		{
+			a=a/0;
+			System.out.println(a);
+		}
+		catch(Exception e)
+		{
+			System.out.println("I am in catch block");
+		}
+		finally
+		{
+			System.out.println("I am closing all files now");
+		}
+		
+		System.out.println("process is finsihed");
+		System.out.println("----------------good************Bye------------------");
+
+	}
+
+}
+
+
+______________________________________________________________________________________________________________________________________________________________________
+ArrayList
+HashMap
+JDBC
+----------------------------------------
+
+Array- 
+	-2 major problems in array
+		- we can store n number of elements, which are decribed during intiation
+		- we can store same type of elements.
+
+ArrayList
+--------------
+int a[]= new int a[5];
+
+Operations on ArrayList
+------------------------------
+how to declare Arraylist
+how to add elements/values to ArrayList
+find size of ArraList
+remove elements/values from array list
+insert a new elemetn int he middle of ArrayList
+read values from ArrayList
+
+int a[ ]= new int[5];
+Object b[ ] = new Object[5];
+
+
+
+package accessModifiers;
+import java.util.*;
+
+public class ArrayListDemo {
+
+	public static void main(String[]args)
+	{
+		
+		ArrayList list = new ArrayList();	//we can store any type of value
+		
+		ArrayList <String> list1=new ArrayList <String>();
+		
+		//adding values to array
+		list1.add("Nav");
+		list1.add("Jot");
+		list1.add("Singh");
+		list1.add("Sidhu");
+		
+		list.add("Amit");
+		list.add("Kumar");
+		list.add(2,"Friend");
+		list.add(10);
+		list.add('Z');
+		
+		//size of an array list
+		System.out.println("after adding array "+ list1);
+		System.out.println(list1.size());
+		
+		list1.remove(2);
+		System.out.println("after Removing array elements "+ list1);
+		System.out.println(list1.size());
+		
+		for(String s:list1)
+		{
+			System.out.println(s);
+		}
+		
+		System.out.println("second string is " + list);
+		
+		for(Object s:list)		//Object type variables can hold any types of values
+		{
+			System.out.println(s);
+		}
+	}
+	
+}
+ 
+
+
+
+HashMap
+-----------------
+
+declare a HAshMap
+add elements from HashMap
+remove elements from HAshMap
+read pairs from HashMap
+
+hm is a variable name
+hm.entrySet() will return the complete pair that means one key and value 
+we have to store this pair in a variable
+we can declare that variable like
+Map.Entry type variable name(m)
+eg Map.Entry m= hm entrySet();
+m.getValue() to extract value from pair
+m.getKey() to extract Key from pair
+
+
+
+package accessModifiers;
+import java.util.HashMap;
+import java.util.Map;
+public class HashMapDemo {
+
+	public static void main(String[] args) {
+		
+		//declaration  
+		// HashMap hm = new HashMap();
+		HashMap <Integer,String> hm = new HashMap <Integer,String> ();
+		
+		//adding pairs(combinations of key and values)
+		hm.put(101, "john");
+		hm.put(102, "Nav");
+		hm.put(103, "jot");
+		hm.put(104, "Singh");
+		
+		System.out.println(hm);
+		
+		//remove a pair from HashMAp
+		hm.remove(103);
+		System.out.println("After removing a pair "+ hm);
+		
+		// reading pairs from HAshMap
+		for(Map.Entry m:hm.entrySet())
+		{
+			System.out.println(m.getKey()+ "   "+ m.getValue());
+		}
+	}
+
+}
+
+
+JDBC
+-----------
+Java Database Connectivity
+------------------------------------
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

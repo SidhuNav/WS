@@ -1,0 +1,25 @@
+
+working with statement
+----------------------
+Statement stmt = conn.createStatement();
+String query = "INSERT INTO product_details(product_name, product_description, product_cost, product_image_url) VALUES ('"+productPojo.getProductName()+"', 									'"+productPojo.getProductDescription()+"', "+productPojo.getProductCost()+", '')";
+int rowsAffected = stmt.executeUpdate(query); // 1 Hit, 1 compilation, 1 execution
+
+// total - 1H, 1C, 1E
+
+// for 100 product insertions, analysis - 100 H, 100 compilation, 100 excecutions
+
+working with prepared statement
+		- pre-compiled statements
+		- compiled once and executed many times
+---------------------------------
+PreparedStatement pstmt = con.prepareStatement("INSERT INTO product_details(product_name, product_description, product_cost, product_image_url) VALUES (?, ?, ?, ?)");// 1 Hit,1 Compilation 
+pstmt.setString(1, productPojo.getProductName());
+pstmt.setString(2, productPojo.getProductDescription());
+pstmt.setInt(3, productPojo.getProductCost());
+pstmt.setString(4, "");
+int rowsAffected = pstmt.executeUpdate();// 1 Hit, 1 Execution
+
+// total - 2H, 1C, 1E
+
+// for 100 product insertions, analysis - 101 H, 1 compilation, 100 excecutions

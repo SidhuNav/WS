@@ -1,0 +1,10 @@
+OOP Solid Principles references
+-------------------------------
+	https://www.baeldung.com/solid-principles
+
+the five principles are
+	Single Responsibility
+	Open/Closed
+	Liskov Substitution
+	Interface Segregation
+	Dependency Inversion

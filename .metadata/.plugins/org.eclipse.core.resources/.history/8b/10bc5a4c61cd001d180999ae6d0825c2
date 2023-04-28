@@ -1,0 +1,33 @@
+
+public class FordFigo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		
+	}
+	boolean unlockCar()
+	{
+		System.out.println("FordFigo is unlocked");
+		return true;
+	}
+	boolean lockCar()
+	{
+		System.out.println("FordFigo is Locked");
+		return true;
+	}
+
+	boolean applyBrakes()
+	{
+		System.out.println("FordFigo's brakes applied ");
+		return true;
+	}
+	boolean accelerate()
+	{
+		System.out.println("FordFigo is accelerated");
+		return true;
+	}
+
+
+}

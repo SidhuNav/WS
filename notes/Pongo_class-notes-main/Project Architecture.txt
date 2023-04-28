@@ -1,0 +1,16 @@
+
+
+three layered architecture - loosely coupled
+
+presentation layer - view/UI - input / output
+service layer - input validations and then the bussiness logic
+DAO(Data Access Object) layer - to interact with the Data Storage
+
+
+model / pojo(plain old java object)/ TO (Transfer object)/ VO (Value object) -  to carry data to and fro, it is not a layer
+
+Product
+
+go for soft delete instead of hard delete,
+	-introduce new column (is_removed) int the table
+	-update this column to say if the record is removed or not

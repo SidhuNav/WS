@@ -1,0 +1,13 @@
+Softwares to be installed ( mine is windows OS)
+--------------------------
+1) Git bash - to work with git commands in local 
+2) JDK 8+ 
+3) Eclipse for Enterprise Java Developers
+
+Create account for
+-------------------
+1) Github
+2) AWS - be careful as some services are paid services and you would have to 
+	 to provide your credit card at the time of creating the account
+
+

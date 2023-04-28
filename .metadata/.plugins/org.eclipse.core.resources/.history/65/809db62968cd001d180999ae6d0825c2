@@ -1,0 +1,22 @@
+
+public class Room {
+
+	//variables
+	int length;
+	int width;
+	int height;
+	String color;
+	int roomNo;
+	
+	int calculateFlooeArea()
+	{
+		int floorArea= length*width;
+		return  floorArea;
+	}
+	int calculatePaintingCost()
+	{
+		int floorArea= length*width;
+		return  floorArea;
+	}
+	
+}

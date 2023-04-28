@@ -1,0 +1,172 @@
+RDB - Relational Databases
+RDBMS - Relational Database Management System
+	- eg : Oracle, Postgres, SQLServer, MySql etc
+
+databases, tables, rows/records, columns
+
+
+student_details(table)
+stud_id		stud_name	stud_mark
+101		ABC		60
+102		XYZ		50
+
+SQL - Structured Querying Language, 
+    - compiled and executed
+
+ANSII SQL - standard followed by all sql DB software vendors
+dialect - 
+
+ORM - Object Relational Mapping (dont have to worry about this in week2) -Spring Data , Hibernate, Ibatis
+
+References
+	https://www.postgresqltutorial.com/
+	https://www.postgresql.org/docs/current/tutorial-table.html
+	https://www.simplilearn.com/tutorials/sql-tutorial/what-is-normalization-in-sql#:~:text=Normalization%20is%20the%20process%20to,data%20from%20the%20relational%20tables.
+
+5 Categories of SQL queries
+	- DDL (Data Definition Language)
+		- deal with the structure of the table
+		- create, alter, drop, truncate
+	- DML (Data Manipulation Language)
+		- deal with the data in the table
+		- insert, update, delete
+	- DQL (Data Querying Language)
+		- select
+		clause
+		- projection
+		- from clause
+		- restriction - where clause
+		- grouping
+		- grouping restriction - having clause
+		- order by clause
+	- TCL (Transaction Control language)
+		- commit, rollback, savepoints
+	- DCL (Data Control language)
+		- granting and revoking priveliges to the users
+		- grant, revoke
+
+Constraints
+Normalization, ACID properties for transactions -very strong interview question
+PL/SQL - stored procedure, functions, triggers
+
+
+2 types of functions
+	scalar function
+		- work on individual record
+	aggregate function
+		- works on all the record in one go
+
+So, in summary, the different types of database keys are:
+
+Natural key: an attribute that can uniquely identify a row, and exists in the real world.
+Surrogate key: an attribute that can uniquely identify a row, and does not exist in the real world.
+Composite key: more than one attribute that when combined can uniquely identify a row.
+Primary key: the single unique identifier for the row.
+Candidate key: an attribute that could be the primary key.
+Alternate key: a candidate key that is not the primary key.
+Unique key: an attribute that can be unique on the table. Can also be called an alternate key.
+Foreign key: an attribute that is used to refer to another record in another table.
+
+
+
+student_details
+student_id(PK)
+101
+102
+103
+
+
+course_details
+course_id(PK)
+501
+502
+503
+
+student_course_details
+
+stud_id course_id id
+101 	502	   1	
+101 	503	   2	
+102 	501	   3
+102 	502        4
+103 	501        5
+103 	503        6
+
+
+stud_id  course_id
+
+
+employee_project_details
+emp_id(PK) , proj_id(PK), emp_name, proj_description, proj_rate
+
+
+emp_id(PK), proj_id(PK), proj_rate
+emp_id, emp_name
+proj_id, proj_description
+
+
+meta commands in postgres
+--------------------------
+\l - lists all the databases
+\dt - list all the tables in the current database that you are connected to
+\c - connect to a particular database
+
+
+4 things that a client to contact the server
+	- protocol 
+	- ip address
+	- port
+	- credententials if it is secured
+	
+	- network
+
+
+
+
+(A, B , C)
+(K, L)
+
+(A,K) (A,L) (B,K) (B,L) (C,K) (C,L)
+
+
+two styles
+	- theta style - old
+	- join style - new
+
+
+Self join example
+-----------------
+write a query to display employe names and the names of their manager
+
+
+CREATE TABLE emp_manager_details(emp_id INT, emp_name VARCHAR(20), emp_salary INT, mgr_id INT, PRIMARY KEY(emp_id), FOREIGN KEY(mgr_id) REFERENCES emp_manager_details(emp_id));
+
+INSERT INTO emp_manager_details VALUES(101,'ABC', 10000, 101);
+INSERT INTO emp_manager_details VALUES(102,'XYZ', 8000, 101);
+INSERT INTO emp_manager_details VALUES(103,'LMN', 8000, 101);
+INSERT INTO emp_manager_details VALUES(104,'QWE', 8000, 102);
+
+select * from emp_manager_details;
+
+SELECT emp1.emp_name, emp2.emp_name manager_name FROM emp_manager_details emp1 INNER JOIN emp_manager_details emp2 ON emp1.mgr_id=emp2.emp_id;
+
+
+emp_id  emp_name	mgr_id
+101 	ABC 		103 
+102 	XYZ		103
+103 	LMN 		104
+104 	QWE		104
+
+
+emp_id  emp_name	mgr_id
+101 	ABC 		103 
+102 	XYZ		103
+103 	LMN 		104
+104 	QWE		104
+
+
+
+
+
+
+

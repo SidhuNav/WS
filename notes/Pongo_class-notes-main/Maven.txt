@@ -1,0 +1,8 @@
+maven project
+
+3 ways to create a maven project
+
+- use the maven command in the command prompt (outside eclipse)
+- create a new maven project in eclipse
+- convert an existing project to a maven project
+

@@ -1,0 +1,55 @@
+Java
+
+platform independent
+	.java
+		after complilation
+	.class - platform independent
+
+	.c
+		after compilation
+	.exe - platform dependent
+
+object oriented programming language - Java, c++
+
+class and objects
+
+class contains 
+	1) properties/attribute/state/field/data members/  
+
+	2) methods/ functions/ behaviour
+		
+
+variables types
+	- instance variables
+		- take memory in heap
+		- if not initialized, stores default values
+
+	- local variables
+		- take memory in stack
+		- if not initialized, stores garbage values
+		
+
+Naming conventions
+	class- title casing, eg : FordFigo
+	variables/methods - camel cased, eg: englishMark
+
+
+procedural programming - c
+
+2 types
+system programs
+	C - Pointers
+application programs
+
+
+
+PMD - Program Mistake Detector
+CPD - Copy Paste Detector
+
+constructor
+	- special methods
+	- it has the samwe name ofthe class
+	- is called automatically when the object is created
+	- does not return a values, not even void
+
+- look out for constructor chaining and its purpose

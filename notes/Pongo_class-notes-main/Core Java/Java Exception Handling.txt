@@ -1,0 +1,35 @@
+exception - occurs at runtime
+
+1. try
+2. catch
+3. finally - will be executes whether an exception is thrown or not thrown, 
+	- make sure the resources opened up in the try block is closed here
+4. throw  - to throw an exception object explicitly
+	  - used extensively to throw user defined exceptions
+5. throws - is used beside a method's signature
+	  -  pass an information that this method is capable of throwing an exception,
+		- so whoever calls it, please handle it
+
+try with resources - new syntax for try - finally
+
+combination
+try - catch
+try - catch - finally
+try - finally
+
+a single try block can have multiple catch blocks
+the more specific exception should be caught above the general exception
+
+
+2 categories of exceptions
+	checked exceptions
+		- comes directly under Exception
+		- caused by external factors
+		- compiler enforced exception - compiler forces you to handle it
+	unchecked exceptions
+		- comes under RuntimeException
+		- should not be handled in try/catch block
+		- should be programatically handled
+		- compiler does not force you to handle this 
+
+custom exceptions

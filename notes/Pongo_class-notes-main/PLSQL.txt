@@ -1,0 +1,54 @@
+PL/SQL
+------
+references
+	- https://www.postgresql.org/docs/current/plpgsql-overview.html
+	- https://www.postgresql.org/docs/current/sql-createprocedure.html
+	- https://www.postgresql.org/docs/current/sql-createfunction.html
+	- https://www.w3resource.com/PostgreSQL/postgresql-triggers.php
+	- https://www.postgresql.org/docs/current/sql-createtrigger.html
+
+
+diffrence between stored procedures and functions - strong interview question
+
+Stored Procedures
+------------------
+
+CREATE OR REPLACE PROCEDURE transfer_money(fromAccount INT, toAccount INT, amount INT) 
+	LANGUAGE SQL 
+	AS $$ 
+		UPDATE account_details SET account_balance=account_balance-amount WHERE account_id=fromAccount; 
+		UPDATE account_details SET account_balance=account_balance+amount WHERE account_id=toAccount; 
+	$$;
+
+CALL transfer_money(22222, 33333, 75);
+
+
+3 types of parameters
+--------------------
+	IN parameters (default)
+	OUT parameters
+	INOUT paramenters
+
+Functions
+---------
+
+Triggers
+--------
+
+CREATE OR REPLACE FUNCTION delete_history()
+  RETURNS trigger AS
+$$
+BEGIN
+         INSERT INTO account_delete_history VALUES(OLD.account_id, OLD.account_name, OLD.account_balance);
+ 
+    RETURN NEW;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+
+CREATE TRIGGER test_trigger
+  AFTER DELETE
+  ON account_details
+  FOR EACH ROW
+  EXECUTE PROCEDURE delete_history();

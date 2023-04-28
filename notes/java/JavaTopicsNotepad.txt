@@ -1,0 +1,116 @@
+Javac
+Javap
+how to set java path
+JDK
+JRE
+JVM
+Naming Convention
+	Title Case
+	Camel Case
+Byte Code
+Machine Code
+Features of JAVA
+Class & Object
+naming conventions
+Primitive Data Type
+	byte
+	short
+	int
+	long
+	float
+	double 
+	char
+	boolean
+Identifier
+Literal
+Casting
+	Implicit asting
+	Explicit Casting
+Variable type
+	local variable - stack memory, default values
+	Instance Variable - heap memory, garbage values
+No Global Variables in JAVA
+Constructor
+	can't override, abstract, final, synchronized and static
+Constructor Overloading
+Constructor chaining - rules - this() or super() should be first line of constructor
+	within same class (this keyword)
+	from base Class (Super keyword)
+init Block
+Errors
+	-Run time Error
+	-Compile time Error
+	-Logical Error
+Operators
+Flow Control statements if, if-else, nested if-else, else if, switch-case
+String
+	String Pool
+	String Lietral
+	String builder
+	String Buffer
+Memory Areas
+	heap
+	class area
+	Method area
+	stack
+	POOL AREA	
+Inheritence -extends
+	single level
+	multi level
+	hierarichal
+interface - implements by efaulst- public, static, final
+	hybrid
+	multiple
+polymorphism
+	overloading/run time/dynamic
+	overriding/compile time/static
+Abstraction
+	class- object can't be created - implements
+	method
+encapsulation
+	getter/setter
+Static block,variable
+Final -varibale, mehtod, class
+Diamond problem - A,B,C m1() overriden method. class C can't call m1() of class A called diamond problem of inheritance
+Collection
+collections
+List
+Set	-hashset,Linked Hashset
+Queue
+
+Exception -checked/compile-time and unchecked/run-time
+	try
+	Catch
+	finally
+	throw
+	throws
+Combinations
+	try-catch
+	try-catch-finally
+	try-finally
+equals and hashcode in java in model pojo
+is - a relationship
+has - a - relationship
+Day-12
+----------------------
+Functional Interface
+	-convenstional
+	-Anonymous class
+	-Lamda Expressions
+	-In build functions
+main 4 types of interfaces ii-build functions
+	-Consumer
+	-Predicate
+	-Supplier
+	-Functions
+For-Each
+Lambda Expressions
+Java 8 Features
+ - Functional Interfaces
+ - forEach()
+ - Optional Class
+ - deafult and static methods in Interface
+ - Lambda Expression
+ - Method Referals using ::
+ - Stream Api
+ - Java Date and Time
